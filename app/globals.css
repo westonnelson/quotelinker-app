@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 198 100 47; /* Sky Blue #00AEEF */
+  --secondary: 120 68 50; /* Lime Green #32CD32 */
+  --accent: 210 100 13; /* Dark Navy #002244 */
+  --background: 0 0 100;
+  --foreground: 222 47 11;
+  --card: 0 0 100;
+  --card-foreground: 222 47 11;
+  --popover: 0 0 100;
+  --popover-foreground: 222 47 11;
+  --muted: 210 40 96;
+  --muted-foreground: 215 16 47;
+  --border: 214 32 91;
+  --input: 214 32 91;
+  --ring: 198 100 47;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 222 47 11;
+  --foreground: 210 40 98;
+  --card: 222 47 11;
+  --card-foreground: 210 40 98;
+  --popover: 222 47 11;
+  --popover-foreground: 210 40 98;
+  --primary: 198 100 47;
+  --primary-foreground: 222 47 11;
+  --secondary: 120 68 50;
+  --secondary-foreground: 222 47 11;
+  --muted: 217 33 17;
+  --muted-foreground: 215 20 65;
+  --accent: 217 33 17;
+  --accent-foreground: 210 40 98;
+  --border: 217 33 17;
+  --input: 217 33 17;
+  --ring: 198 100 47;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-outfit font-bold;
+  }
+  p,
+  span,
+  div,
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    @apply font-sans;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 md:px-6 max-w-7xl;
+  }
+
+  .btn-primary {
+    @apply bg-secondary hover:bg-secondary/90 text-white font-medium py-3 px-6 rounded-md transition-all duration-300 hover:scale-105 hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-md transition-all duration-300 hover:scale-105 hover:shadow-md;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-accent;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-gray-600 mb-8 max-w-3xl;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg;
+  }
+
+  /* Animation utilities */
+  .fade-in {
+    @apply animate-[fade-in_0.5s_ease-in-out];
+  }
+
+  .slide-up {
+    @apply animate-[slide-up_0.5s_ease-in-out];
+  }
+
+  .pulse-slow {
+    @apply animate-[pulse_3s_infinite];
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
